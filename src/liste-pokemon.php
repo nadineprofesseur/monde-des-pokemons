@@ -10,7 +10,20 @@
 	$requeteListePokemons->execute();
 	// $pokemon1 = $requeteListePokemons->fetch();
 	// print_r($pokemon1);
-
+	$listePokemon = array();
+	$position = 0;
+	while($pokemon = $requeteListePokemons->fetch())
+	{
+		//echo "<div>";
+		//print_r($pokemon);
+		//echo "</div>";
+		$listePokemon[$position++] = $pokemon;
+	}
+	/*
+	echo "<pre>";
+	var_export($listePokemon);
+	echo "</pre>";
+	*/
 ?>
 <!doctype html>
 <html lang="fr">
@@ -29,7 +42,7 @@
 	
 	
 		<?php
-		while($pokemon = $requeteListePokemons->fetch())
+		foreach($listePokemon as $pokemon)
 		{?>
 		<div>
 			<div><?=$pokemon['nom']?></div>
