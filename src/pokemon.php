@@ -1,5 +1,7 @@
 <?php
 
+	$idPokemon = $_GET["pokemon"];
+
 	$base = "mondepokemon";
 	$hote = "localhost";
 	$usager = "root";
@@ -7,10 +9,9 @@
 	$dsn = "mysql:dbname=".$base.";host=" . $hote;
 	$basededonnees = new PDO($dsn, $usager, $motdepasse);
 	
-	$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = 2";
+	
+	$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = $idPokemon";
 	//echo $LIRE_POKEMON;
-	
-	
 	//$curseurPokemon = $basededonnees->query($LIRE_POKEMON);
 	//$pokemon = $curseurPokemon->fetch();
 	
