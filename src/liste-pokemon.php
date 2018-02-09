@@ -8,17 +8,8 @@
 
 	$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
 	$requeteListePokemons->execute();
-	// $pokemon1 = $requeteListePokemons->fetch();
-	// print_r($pokemon1);
-	$listePokemon = array();
-	$position = 0;
-	while($pokemon = $requeteListePokemons->fetch())
-	{
-		//echo "<div>";
-		//print_r($pokemon);
-		//echo "</div>";
-		$listePokemon[$position++] = $pokemon;
-	}
+	$listePokemon = $requeteListePokemons->fetchAll();
+	
 	/*
 	echo "<pre>";
 	var_export($listePokemon);
