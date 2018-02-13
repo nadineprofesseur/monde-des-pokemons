@@ -1,10 +1,5 @@
 <?php 
-	$base = "mondepokemon";
-	$hote = "localhost";
-	$usager = "root";
-	$motdepasse = "testtest";
-	$dsn = "mysql:dbname=".$base.";host=" . $hote;
-	$basededonnees = new PDO($dsn, $usager, $motdepasse);
+	require_once "basededonnees.php";
 
 	$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
 	$requeteListePokemons->execute();
@@ -46,7 +41,9 @@
 				<a href="modifier-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
 				Modifier
 				</a>
+				<a href="supprimer-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
 				Supprimer
+				</a>
 
 				
 				
