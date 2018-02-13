@@ -2,13 +2,7 @@
 
 	$idPokemon = $_GET["pokemon"];
 
-	$base = "mondepokemon";
-	$hote = "localhost";
-	$usager = "root";
-	$motdepasse = "testtest";
-	$dsn = "mysql:dbname=".$base.";host=" . $hote;
-	$basededonnees = new PDO($dsn, $usager, $motdepasse);
-	
+	include "basededonnees.php";	
 	
 	$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = $idPokemon";
 	//echo $LIRE_POKEMON;
