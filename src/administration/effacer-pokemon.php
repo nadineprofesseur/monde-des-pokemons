@@ -29,17 +29,17 @@
 	</header>
 	
 	<section id="contenu">
-		<header><h2>Supprimer un pokemon</h2></header>
+		<header><h2>Effacer un pokemon</h2></header>
 		<form method="post" action="liste-pokemon.php">
 			
 			<input type="hidden" name="id" value="<?=$pokemon['idPokemon']?>"/>
 
-			Voulez-vous vraiment supprimer <?=$pokemon['nom']?> ?
+			Voulez-vous vraiment effacer <?=$pokemon['nom']?> ?
 
 			<input type="submit" name="confirmation-oui" value="Oui"/>
 			<input type="submit" name="confirmation-non" value="Non"/>
 			
-			<input type="hidden" name="action-supprimer-pokemon" value="1"/>
+			<input type="hidden" name="action-effacer-pokemon" value="1"/>
 			
 		</form>
 	</section>

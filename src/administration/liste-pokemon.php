@@ -5,10 +5,10 @@
 		//echo "action-ajouter-pokemon";
 		include "action-ajouter-pokemon.php";
 	}
-	if(!empty($_POST['action-supprimer-pokemon']))
+	if(!empty($_POST['action-effacer-pokemon']))
 	{
-		//echo "action-supprimer-pokemon";
-		include "action-supprimer-pokemon.php";
+		//echo "action-effacer-pokemon";
+		include "action-effacer-pokemon.php";
 	}
 	
 
