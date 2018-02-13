@@ -14,7 +14,21 @@
 		
 		function lirePokemon($id)
 		{
+			global $basededonnees;
+	
+			$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = $id";
+			//echo $LIRE_POKEMON;
+			//$curseurPokemon = $basededonnees->query($LIRE_POKEMON);
+			//$pokemon = $curseurPokemon->fetch();
 			
+			$requeteLirePokemon = $basededonnees->prepare($LIRE_POKEMON);
+			$requeteLirePokemon->execute();
+			$pokemon = $requeteLirePokemon->fetch();
+			
+			//print_r($pokemon);
+			//var_dump($pokemon);	
+			
+			return $pokemon;
 		}
 		
 		function ajouterPokemon($pokemon)

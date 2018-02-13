@@ -1,20 +1,11 @@
 <?php
 
 	$idPokemon = $_GET["pokemon"];
+	
+	include "accesseur/PokemonDAO.php";
+	$pokemonDao = new PokemonDAO();
+	$pokemon = $pokemonDao->lirePokemon($idPokemon);
 
-	include "basededonnees.php";	
-	
-	$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = $idPokemon";
-	//echo $LIRE_POKEMON;
-	//$curseurPokemon = $basededonnees->query($LIRE_POKEMON);
-	//$pokemon = $curseurPokemon->fetch();
-	
-	$requeteLirePokemon = $basededonnees->prepare($LIRE_POKEMON);
-	$requeteLirePokemon->execute();
-	$pokemon = $requeteLirePokemon->fetch();
-	
-	//print_r($pokemon);
-	//var_dump($pokemon);
 ?>
 <!doctype html>
 <html lang="fr">
