@@ -1,5 +1,5 @@
 <?php 
-	include "basededonnees.php";	
+	require_once "basededonnees.php";
 	class PokemonDAO
 	{		
 		
@@ -33,19 +33,46 @@
 		
 		function ajouterPokemon($pokemon)
 		{
+			global $basededonnees;
+			//echo "PokemonDao->ajouterPokemon()";
+			//print_r($_POST);
+	
+			$nom = $pokemon["nom"];
+			$type = $pokemon["type"];
+			$generation = $pokemon["generation"];
+			$resume = $pokemon["resume"];
 			
+			$SQL_AJOUTER_POKEMON = "INSERT into pokemon(nom, type, generation, resume) VALUES('".$nom."','".$type."','".$generation."','".$resume."')";
+			//echo $SQL_AJOUTER_POKEMON;
+				
+			$requeteAjouterPokemon = $basededonnees->prepare($SQL_AJOUTER_POKEMON);
+			$requeteAjouterPokemon->execute();	
 		}
 		
 		function modifierPokemon($pokemon)
 		{
+			global $basededonnees;
 			
+			$nom = $pokemon["nom"];
+			$type = $pokemon["type"];
+			$generation = $pokemon["generation"];
+			$resume = $pokemon["resume"];
+			$id = $pokemon["id"];
 			
+			$SQL_MODIFIER_POKEMON = "UPDATE pokemon SET nom = '".$nom."', type = '".$type."', generation = '".$generation."', resume = '".$resume."' WHERE idPokemon = ".$id;
+			//echo $SQL_MODIFIER_POKEMON;
+						
+			$requeteModifierPokemon = $basededonnees->prepare($SQL_MODIFIER_POKEMON);
+			$requeteModifierPokemon->execute();			
 		}
 		
-		function effacerPokemon($pokemon)
+		function effacerPokemon($id)
 		{
-			
-			
+			global $basededonnees;
+			$SQL_EFFACER_POKEMON = "DELETE FROM pokemon WHERE idPokemon = " . $_POST['id'];
+			//echo $SQL_EFFACER_POKEMON;
+			$requeteEffacerPokemon = $basededonnees->prepare($SQL_EFFACER_POKEMON);
+			$requeteEffacerPokemon->execute();		
 		}
 	}
 
