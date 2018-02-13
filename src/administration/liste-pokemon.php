@@ -1,5 +1,10 @@
 <?php 
-	require_once "basededonnees.php";
+	$base = "mondepokemon";
+	$hote = "localhost";
+	$usager = "root";
+	$motdepasse = "testtest";
+	$dsn = "mysql:dbname=".$base.";host=" . $hote;
+	$basededonnees = new PDO($dsn, $usager, $motdepasse);
 
 	$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
 	$requeteListePokemons->execute();

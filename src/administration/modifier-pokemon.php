@@ -1,20 +1,21 @@
 <?php
+
 	$idPokemon = $_GET["pokemon"];
 
-	if(!empty($_POST['action-modifier']))
-	{
-		//echo "formulaire envoye";
-		include "action-modifier-pokemon.php";
-	}
-
-	require_once "basededonnees.php";	
+	$base = "mondepokemon";
+	$hote = "localhost";
+	$usager = "root";
+	$motdepasse = "testtest";
+	$dsn = "mysql:dbname=".$base.";host=" . $hote;
+	$pdo = new PDO($dsn, $usager, $motdepasse);
+	
 	
 	$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = $idPokemon";
 	//echo $LIRE_POKEMON;
 	//$curseurPokemon = $pdo->query($LIRE_POKEMON);
 	//$pokemon = $curseurPokemon->fetch();
 	
-	$requeteLirePokemon = $basededonnees->prepare($LIRE_POKEMON);
+	$requeteLirePokemon = $pdo->prepare($LIRE_POKEMON);
 	$requeteLirePokemon->execute();
 	$pokemon = $requeteLirePokemon->fetch();
 	
@@ -35,7 +36,7 @@
 	
 	<section id="contenu">
 		<header><h2>Modifier un pokemon</h2></header>
-		<form method="post" action="modifier-pokemon.php?pokemon=<?=$_GET["pokemon"]?>">
+		<form method="post" action="action-modifier-pokemon.php">
 			
 			<input type="hidden" name="id" value="<?=$pokemon['idPokemon']?>"/>
 
@@ -59,7 +60,7 @@
 				<textarea name="resume" id="resume"><?=$pokemon['resume']?></textarea>
 			</div>
 						
-			<input type="submit" name="action-modifier" value="Enregistrer"/>
+			<input type="submit"/>
 			
 		</form>
 	</section>

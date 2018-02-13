@@ -2,14 +2,20 @@
 
 	$idPokemon = $_GET["pokemon"];
 
-	require_once "basededonnees.php";
-		
+	$base = "mondepokemon";
+	$hote = "localhost";
+	$usager = "root";
+	$motdepasse = "testtest";
+	$dsn = "mysql:dbname=".$base.";host=" . $hote;
+	$pdo = new PDO($dsn, $usager, $motdepasse);
+	
+	
 	$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = $idPokemon";
 	//echo $LIRE_POKEMON;
-	//$curseurPokemon = $basededonnees->query($LIRE_POKEMON);
+	//$curseurPokemon = $pdo->query($LIRE_POKEMON);
 	//$pokemon = $curseurPokemon->fetch();
 	
-	$requeteLirePokemon = $basededonnees->prepare($LIRE_POKEMON);
+	$requeteLirePokemon = $pdo->prepare($LIRE_POKEMON);
 	$requeteLirePokemon->execute();
 	$pokemon = $requeteLirePokemon->fetch();
 	
