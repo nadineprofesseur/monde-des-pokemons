@@ -1,3 +1,6 @@
+<?php 
+	include "action-modifier-pokemon.php";
+?>
 <?php
 
 	$idPokemon = $_GET["pokemon"];
@@ -15,14 +18,6 @@
 	
 	//print_r($pokemon);
 	//var_dump($pokemon);
-?>
-<?php 
-	// print_r($_POST);
-	if(!empty($_POST['action-modifier-pokemon']))
-	{
-		include "action-modifier-pokemon.php";
-	}
-
 ?>
 
 <!doctype html>

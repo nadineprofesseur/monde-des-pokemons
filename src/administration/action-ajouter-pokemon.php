@@ -1,4 +1,7 @@
 <?php
+if(!empty($_POST['action-ajouter-pokemon']))
+{
+		//echo "action-ajouter-pokemon";
 
 	print_r($_POST);
 	
@@ -15,6 +18,7 @@
 	$requeteAjouterPokemon = $basededonnees->prepare($SQL_AJOUTER_POKEMON);
 	$requeteAjouterPokemon->execute();
 
+}
 	
 
 ?>

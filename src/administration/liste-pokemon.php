@@ -1,16 +1,7 @@
 <?php 
 
-	if(!empty($_POST['action-ajouter-pokemon']))
-	{
-		//echo "action-ajouter-pokemon";
-		include "action-ajouter-pokemon.php";
-	}
-	if(!empty($_POST['action-effacer-pokemon']))
-	{
-		//echo "action-effacer-pokemon";
-		include "action-effacer-pokemon.php";
-	}
-	
+	include "action-ajouter-pokemon.php";
+	include "action-effacer-pokemon.php";
 
 	require_once "basededonnees.php";
 	$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
@@ -53,8 +44,8 @@
 				<a href="modifier-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
 				Modifier
 				</a>
-				<a href="supprimer-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
-				Supprimer
+				<a href="effacer-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
+				Effacer
 				</a>
 
 				

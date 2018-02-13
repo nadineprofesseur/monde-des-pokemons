@@ -1,5 +1,7 @@
 <?php
-
+if(!empty($_POST['action-modifier-pokemon']))
+{
+	//echo "action-modifier-pokemon";
 	//print_r($_POST);
 	
 	$nom = $_POST["nom"];
@@ -16,4 +18,6 @@
 	
 	$requeteModifierPokemon = $basededonnees->prepare($SQL_MODIFIER_POKEMON);
 	$requeteModifierPokemon->execute();
+}
+
 ?>
