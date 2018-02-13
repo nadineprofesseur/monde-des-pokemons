@@ -1,17 +1,8 @@
-<?php 
-	include "basededonnees.php";	
-
-	$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
-	$requeteListePokemons->execute();
-	$listePokemon = $requeteListePokemons->fetchAll();
-	
+<?php 	
 	include "accesseur/PokemonDAO.php";
-	
-	/*
-	echo "<pre>";
-	var_export($listePokemon);
-	echo "</pre>";
-	*/
+	$pokemonDao = new PokemonDAO();
+	$listePokemon = $pokemonDao->lireListe();
+	//exit(0);
 ?>
 <!doctype html>
 <html lang="fr">

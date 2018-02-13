@@ -5,7 +5,11 @@
 		
 		function lireListe()
 		{
-			
+			global $basededonnees;
+			$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
+			$requeteListePokemons->execute();
+			$listePokemon = $requeteListePokemons->fetchAll();
+			return $listePokemon;
 		}
 		
 		function lirePokemon($id)
