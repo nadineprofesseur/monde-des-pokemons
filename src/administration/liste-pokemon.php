@@ -43,7 +43,9 @@
 			<div>
 				<?=$pokemon['nom']?>
 				
+				<a href="modifier-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
 				Modifier
+				</a>
 				Supprimer
 
 				
