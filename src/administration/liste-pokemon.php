@@ -2,17 +2,9 @@
 
 	include "action-ajouter-pokemon.php";
 	include "action-effacer-pokemon.php";
-
-	require_once "basededonnees.php";
-	$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
-	$requeteListePokemons->execute();
-	$listePokemon = $requeteListePokemons->fetchAll();
-	
-	/*
-	echo "<pre>";
-	var_export($listePokemon);
-	echo "</pre>";
-	*/
+	include_once "../accesseur/PokemonDAO.php";
+	$pokemonDao = new PokemonDAO();
+	$listePokemon = $pokemonDao->lireListe();	
 ?>
 <!doctype html>
 <html lang="fr">

@@ -2,15 +2,13 @@
 if(!empty($_POST['action-effacer-pokemon']))
 {
 	//echo "action-effacer-pokemon";
-//print_r($_POST);
+	//print_r($_POST);
 
 	if(!empty($_POST['confirmation-oui']))
-	{
-		$SQL_EFFACER_POKEMON = "DELETE FROM pokemon WHERE idPokemon = " . $_POST['id'];
-		//echo $SQL_EFFACER_POKEMON;
-		require_once "basededonnees.php";
-		$requeteEffacerPokemon = $basededonnees->prepare($SQL_EFFACER_POKEMON);
-		$requeteEffacerPokemon->execute();
+	{		
+		include_once "../accesseur/PokemonDAO.php";
+		$pokemonDao = new PokemonDAO();
+		$pokemonDao->effacerPokemon($_POST['id']);
 	}
 	else
 	{
