@@ -16,6 +16,15 @@
 	//print_r($pokemon);
 	//var_dump($pokemon);
 ?>
+<?php 
+	// print_r($_POST);
+	if(!empty($_POST['action-modifier-pokemon']))
+	{
+		include "action-modifier-pokemon.php";
+	}
+
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -30,7 +39,7 @@
 	
 	<section id="contenu">
 		<header><h2>Modifier un pokemon</h2></header>
-		<form method="post" action="action-modifier-pokemon.php">
+		<form method="post" action="modifier-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
 			
 			<input type="hidden" name="id" value="<?=$pokemon['idPokemon']?>"/>
 
@@ -54,7 +63,7 @@
 				<textarea name="resume" id="resume"><?=$pokemon['resume']?></textarea>
 			</div>
 						
-			<input type="submit"/>
+			<input type="submit" name="action-modifier-pokemon" value="Enregistrer"/>
 			
 		</form>
 	</section>

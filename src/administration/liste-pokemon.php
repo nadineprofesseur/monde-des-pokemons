@@ -1,6 +1,18 @@
 <?php 
-	require_once "basededonnees.php";
 
+	if(!empty($_POST['action-ajouter-pokemon']))
+	{
+		//echo "action-ajouter-pokemon";
+		include "action-ajouter-pokemon.php";
+	}
+	if(!empty($_POST['action-supprimer-pokemon']))
+	{
+		//echo "action-supprimer-pokemon";
+		include "action-supprimer-pokemon.php";
+	}
+	
+
+	require_once "basededonnees.php";
 	$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
 	$requeteListePokemons->execute();
 	$listePokemon = $requeteListePokemons->fetchAll();
