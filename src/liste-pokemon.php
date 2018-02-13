@@ -5,6 +5,8 @@
 	$requeteListePokemons->execute();
 	$listePokemon = $requeteListePokemons->fetchAll();
 	
+	include "accesseur/PokemonDAO.php";
+	
 	/*
 	echo "<pre>";
 	var_export($listePokemon);
