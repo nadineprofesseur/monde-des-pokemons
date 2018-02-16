@@ -16,12 +16,14 @@
 		{
 			global $basededonnees;
 	
-			$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = $id";
+			$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = :id_pokemon";
+			//$LIRE_POKEMON = "SELECT * FROM pokemon WHERE idPokemon = $id";
 			//echo $LIRE_POKEMON;
 			//$curseurPokemon = $basededonnees->query($LIRE_POKEMON);
 			//$pokemon = $curseurPokemon->fetch();
 			
 			$requeteLirePokemon = $basededonnees->prepare($LIRE_POKEMON);
+			$requeteLirePokemon->bindParam(":id_pokemon", $id);
 			$requeteLirePokemon->execute();
 			$pokemon = $requeteLirePokemon->fetch();
 			
