@@ -44,10 +44,14 @@
 			$generation = $pokemon["generation"];
 			$resume = $pokemon["resume"];
 			
-			$SQL_AJOUTER_POKEMON = "INSERT into pokemon(nom, type, generation, resume) VALUES('".$nom."','".$type."','".$generation."','".$resume."')";
+			$SQL_AJOUTER_POKEMON = "INSERT into pokemon(nom, type, generation, resume) VALUES(:nom,:type,:generation,:resume)";
 			//echo $SQL_AJOUTER_POKEMON;
 				
 			$requeteAjouterPokemon = $basededonnees->prepare($SQL_AJOUTER_POKEMON);
+			$requeteAjouterPokemon->bindParam(':nom',$nom, PDO::PARAM_STR);
+			$requeteAjouterPokemon->bindParam(':type',$type, PDO::PARAM_STR);
+			$requeteAjouterPokemon->bindParam(':generation',$generation, PDO::PARAM_INT);
+			$requeteAjouterPokemon->bindParam(':resume',$resume, PDO::PARAM_STR);
 			$requeteAjouterPokemon->execute();	
 		}
 		
