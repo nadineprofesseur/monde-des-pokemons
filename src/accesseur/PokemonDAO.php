@@ -65,10 +65,15 @@
 			$resume = $pokemon["resume"];
 			$id = $pokemon["id"];
 			
-			$SQL_MODIFIER_POKEMON = "UPDATE pokemon SET nom = '".$nom."', type = '".$type."', generation = '".$generation."', resume = '".$resume."' WHERE idPokemon = ".$id;
+			$SQL_MODIFIER_POKEMON = "UPDATE pokemon SET nom = :nom, type = :type, generation = :generation, resume = :resume WHERE idPokemon = :id_pokemon";
 			//echo $SQL_MODIFIER_POKEMON;
 						
 			$requeteModifierPokemon = $basededonnees->prepare($SQL_MODIFIER_POKEMON);
+			$requeteModifierPokemon->bindParam(':nom',$nom, PDO::PARAM_STR);
+			$requeteModifierPokemon->bindParam(':type',$type, PDO::PARAM_STR);
+			$requeteModifierPokemon->bindParam(':generation',$generation, PDO::PARAM_INT);
+			$requeteModifierPokemon->bindParam(':resume',$resume, PDO::PARAM_STR);
+			$requeteModifierPokemon->bindParam(":id_pokemon", $id, PDO::PARAM_INT);
 			$requeteModifierPokemon->execute();			
 		}
 		
