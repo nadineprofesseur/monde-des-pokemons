@@ -80,9 +80,10 @@
 		function effacerPokemon($id)
 		{
 			global $basededonnees;
-			$SQL_EFFACER_POKEMON = "DELETE FROM pokemon WHERE idPokemon = " . $_POST['id'];
+			$SQL_EFFACER_POKEMON = "DELETE FROM pokemon WHERE idPokemon = :id_pokemon";
 			//echo $SQL_EFFACER_POKEMON;
 			$requeteEffacerPokemon = $basededonnees->prepare($SQL_EFFACER_POKEMON);
+			$requeteEffacerPokemon->bindParam(":id_pokemon", $id);
 			$requeteEffacerPokemon->execute();		
 		}
 	}
