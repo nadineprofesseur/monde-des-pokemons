@@ -1,6 +1,6 @@
 <?php
 
-	$idPokemon = $_GET["pokemon"];
+	$idPokemon = filter_var($_GET["pokemon"],FILTER_SANITIZE_NUMBER_INT);
 	
 	include_once "../accesseur/PokemonDAO.php";
 	$pokemonDao = new PokemonDAO();

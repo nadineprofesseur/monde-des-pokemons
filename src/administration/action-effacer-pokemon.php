@@ -6,9 +6,10 @@ if(!empty($_POST['action-effacer-pokemon']))
 
 	if(!empty($_POST['confirmation-oui']))
 	{		
+		$idPokemon = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
 		include_once "../accesseur/PokemonDAO.php";
 		$pokemonDao = new PokemonDAO();
-		$pokemonDao->effacerPokemon($_POST['id']);
+		$pokemonDao->effacerPokemon($idPokemon);
 	}
 	else
 	{
