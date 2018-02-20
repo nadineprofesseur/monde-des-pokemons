@@ -10,5 +10,14 @@
 			$requeteListerApparitions->execute();
 			return $requeteListerApparitions->fetchAll();
 		}
+		
+		function lireApparition($idApparition)
+		{
+			$LIRE_APPARITION = "SELECT * FROM apparition WHERE idApparition = $idApparition";
+			global $basededonnees;
+			$requeteLireApparition = $basededonnees->prepare($LIRE_APPARITION);
+			$requeteLireApparition->execute();
+			return $requeteLireApparition->fetch();
+		}
 	}
 ?>

@@ -2,9 +2,10 @@
 	$idApparition = filter_var($_GET['apparition'], FILTER_SANITIZE_NUMBER_INT);
 	echo $idApparition;
 	
-	//include "accesseur/ApparitionDAO.php";
-	//$apparitionDao = new ApparitionDAO();
-	//$apparition = $apparitionDao->lireApparition($idApparition);
+	include "accesseur/ApparitionDAO.php";
+	$apparitionDao = new ApparitionDAO();
+	$apparition = $apparitionDao->lireApparition($idApparition);
+	//print_r($apparition);
 ?>
 <!doctype html>
 <html lang="fr">
