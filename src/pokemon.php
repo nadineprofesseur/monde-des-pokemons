@@ -39,7 +39,16 @@
 		<section>
 			<h3>Liste des épisodes</h3>
 			<?php 
-				print_r($listeApparitions);
+				//print_r($listeApparitions);
+				foreach($listeApparitions as $apparition)
+				{
+				?>
+				<div>
+					<h4>Episode : <?=$apparition['episode']?></h4>
+					<p><?=$apparition['description']?></p>
+				</div>
+				<?php
+				}
 			?>
 		</section>
 	
