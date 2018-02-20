@@ -8,16 +8,16 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Monde des Pokémons</title>
 </head>
 <body>
 	<header>
-		<h1></h1>
+		<h1>Monde des Pokémons</h1>
 		<nav></nav>
 	</header>
 	
 	<section id="contenu">
-		<header><h2></h2></header>
+		<header><h2>Liste des pokémons</h2></header>
 	
 	
 		<?php
