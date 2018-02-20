@@ -1,3 +1,8 @@
+<?php
+	$idPokemon = filter_var($_GET["pokemon"], FILTER_SANITIZE_NUMBER_INT);
+	//echo $idPokemon;
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -12,7 +17,7 @@
 	
 	<section id="contenu">
 		<header><h2>Ajouter une apparition</h2></header>
-		<form method="post" action="pokemon.php?">
+		<form method="post" action="action/action-ajouter-apparition.php?pokemon=<?=$idPokemon?>">
 		
 			<div>
 				<label for="episode">Épisode</label>
@@ -31,6 +36,9 @@
 					<option value="0">Non</option>
 				</select>
 			</div>
+						
+						
+			<input type="hidden" name="idPokemon" value="<?=$idPokemon?>"/>
 						
 			<input type="submit" name="action-ajouter-apparition" value="Ajouter"/>
 			
