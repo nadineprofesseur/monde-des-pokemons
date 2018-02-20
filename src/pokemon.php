@@ -44,7 +44,7 @@
 				{
 				?>
 				<div>
-					<h4>Episode : <?=$apparition['episode']?></h4>
+					<h4><a href="apparition.php?apparition=<?=$apparition['idApparition']?>">Episode : <?=$apparition['episode']?></a></h4>
 					<p><?=$apparition['description']?></p>
 				</div>
 				<?php
