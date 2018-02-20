@@ -6,6 +6,10 @@
 	include_once "../accesseur/PokemonDAO.php";
 	$pokemonDao = new PokemonDAO();
 	$pokemon = $pokemonDao->lirePokemon($idPokemon);		
+
+	include "../accesseur/ApparitionDAO.php";
+	$apparitionDao = new ApparitionDAO();
+	$listeApparitions = $apparitionDao->listerApparitionDePokemon($idPokemon);		
 ?>
 
 <!doctype html>
@@ -51,6 +55,24 @@
 		</form>
 		
 		<nav><a href="index.php">Revenir à la liste des pokémons</a></nav>
+	</section>
+	
+	<section>
+		Ajouter
+		<?php 
+		
+			foreach($listeApparitions as $apparition)
+			{
+				//print_r($apparition);
+			?>
+			<div>
+				Épisode <?=$apparition['episode']?> Modifier Supprimer
+			</div>
+			<?php
+			}
+		
+		?>
+	
 	</section>
 	
 	<footer><span id="signature"></span></footer>
