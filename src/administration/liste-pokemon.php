@@ -1,7 +1,7 @@
 <?php 
 
-	include "action-ajouter-pokemon.php";
-	include "action-effacer-pokemon.php";
+	include "action/action-ajouter-pokemon.php";
+	include "action/action-effacer-pokemon.php";
 	include_once "../accesseur/PokemonDAO.php";
 	$pokemonDao = new PokemonDAO();
 	$listePokemon = $pokemonDao->lireListe();	

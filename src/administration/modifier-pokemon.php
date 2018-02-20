@@ -1,5 +1,5 @@
 <?php 
-	include "action-modifier-pokemon.php";
+	include "action/action-modifier-pokemon.php";
 
 	$idPokemon = filter_var($_GET["pokemon"], FILTER_SANITIZE_NUMBER_INT);
 	
