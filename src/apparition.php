@@ -1,6 +1,6 @@
 <?php
 	$idApparition = filter_var($_GET['apparition'], FILTER_SANITIZE_NUMBER_INT);
-	echo $idApparition;
+	//echo $idApparition;
 	
 	include "accesseur/ApparitionDAO.php";
 	$apparitionDao = new ApparitionDAO();
@@ -20,14 +20,11 @@
 	</header>
 	
 	<section id="contenu">
-		<header><h2>Apparition de l'épisode <? //$apparition['episode']?></h2></header>
+		<header><h2>Apparition de l'épisode <?=$apparition['episode']?></h2></header>
 
-		<div>
-		</div>
-		<div>
-		</div>
-	
-		<nav><a href="pokemon.php">Revenir à la liste des apparitions</a></nav>
+		<p><?=$apparition['description']?></p>
+		
+		<nav><a href="pokemon.php?pokemon=<?=$apparition['idPokemon']?>">Revenir à la liste des apparitions</a></nav>
 	</section>
 	
 	
