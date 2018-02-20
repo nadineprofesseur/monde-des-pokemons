@@ -58,7 +58,7 @@
 	</section>
 	
 	<section>
-		Ajouter
+		<a href="ajouter-apparition.php?pokemon=<?=$pokemon['idPokemon']?>">Ajouter</a>
 		<?php 
 		
 			foreach($listeApparitions as $apparition)
