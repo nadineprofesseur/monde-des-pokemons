@@ -30,7 +30,8 @@
 		</div>
 		
 		<p><?=$pokemon['resume']?></p>		
-		
+	
+		<nav><a href="index.php">Revenir à la liste des pokémons</a></nav>
 	</section>
 	
 	<footer><span id="signature"></span></footer>

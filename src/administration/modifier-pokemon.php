@@ -49,6 +49,8 @@
 			<input type="submit" name="action-modifier-pokemon" value="Enregistrer"/>
 			
 		</form>
+		
+		<nav><a href="index.php">Revenir à la liste des pokémons</a></nav>
 	</section>
 	
 	<footer><span id="signature"></span></footer>

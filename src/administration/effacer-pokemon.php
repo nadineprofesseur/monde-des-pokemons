@@ -20,7 +20,7 @@
 	
 	<section id="contenu">
 		<header><h2>Effacer un pokemon</h2></header>
-		<form method="post" action="liste-pokemon.php">
+		<form method="post" action="index.php">
 			
 			<input type="hidden" name="id" value="<?=$pokemon['idPokemon']?>"/>
 
