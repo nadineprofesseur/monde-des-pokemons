@@ -6,6 +6,9 @@
 	$pokemonDao = new PokemonDAO();
 	$pokemon = $pokemonDao->lirePokemon($idPokemon);
 
+	include "accesseur/ApparitionDAO.php";
+	$apparitionDao = new ApparitionDAO();
+	$listeApparitions = $apparitionDao->listerApparitionDePokemon($idPokemon);	
 ?>
 <!doctype html>
 <html lang="fr">
@@ -21,18 +24,28 @@
 	
 	<section id="contenu">
 		<header><h2>Pokémon : <?=$pokemon['nom']?></h2></header>
+
+		<section>
+			<div>
+				Type : <?=$pokemon['type']?>
+			</div>
+			<div>
+				Génération : <?=$pokemon['generation']?>
+			</div>
+			
+			<p><?=$pokemon['resume']?></p>				
+		</section>
 		
-		<div>
-			Type : <?=$pokemon['type']?>
-		</div>
-		<div>
-			Génération : <?=$pokemon['generation']?>
-		</div>
-		
-		<p><?=$pokemon['resume']?></p>		
+		<section>
+			<h3>Liste des épisodes</h3>
+			<?php 
+				print_r($listeApparitions);
+			?>
+		</section>
 	
 		<nav><a href="index.php">Revenir à la liste des pokémons</a></nav>
 	</section>
+	
 	
 	<footer><span id="signature"></span></footer>
 </body>
