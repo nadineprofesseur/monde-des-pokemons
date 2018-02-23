@@ -21,7 +21,7 @@
 	
 	<section id="contenu">
 		<header><h2>Effacer une apparition de pokemon</h2></header>
-		<form method="post" action="effacer-apparition.php">
+		<form method="post" action="action/action-effacer-apparition.php">
 			
 			<input type="hidden" name="id" value="<?=$apparition['idApparition']?>"/>
 
