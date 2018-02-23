@@ -67,7 +67,7 @@
 			<div>
 				Épisode <?=$apparition['episode']?> 
 				<a href="modifier-apparition.php?apparition=<?=$apparition['idApparition']?>">Modifier</a> 
-				Supprimer
+				<a href="effacer-apparition.php?apparition=<?=$apparition['idApparition']?>">Effacer</a>
 			</div>
 			<?php
 			}
