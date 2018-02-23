@@ -41,5 +41,17 @@
 			$requeteModifierApparition = $basededonnees->prepare($MODIFIER_APPARITION);
 			$requeteModifierApparition->execute();
 		}
+		
+		function effacerApparition($id)
+		{
+			//echo "ApparitionDAO.effacerApparition()";
+			//print_r($apparition);
+			$EFFACER_APPARITION = "DELETE FROM apparition WHERE idApparition = " . $id;
+			//echo $EFFACER_APPARITION;
+			global $basededonnees;
+			$requeteEffacerApparition = $basededonnees->prepare($EFFACER_APPARITION);
+			$requeteEffacerApparition->execute();
+			
+		}
 	}
 ?>
