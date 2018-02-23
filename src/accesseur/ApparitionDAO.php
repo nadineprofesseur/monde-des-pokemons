@@ -30,5 +30,16 @@
 			$requeteAjouterApparition = $basededonnees->prepare($AJOUTER_APPARITION);
 			$requeteAjouterApparition->execute();
 		}
+		
+		function modifierApparition($apparition)
+		{
+			//echo "ApparitionDAO.modifierApparition()";
+			//print_r($apparition);
+			$MODIFIER_APPARITION = "UPDATE apparition SET episode = '".$apparition['episode']."', description = '".$apparition['description']."', majeur = '".$apparition['majeur']."' WHERE idApparition = '".$apparition['idApparition']."'";
+			echo $MODIFIER_APPARITION;
+			//global $basededonnees;
+			//$requeteModifierApparition = $basededonnees->prepare($MODIFIER_APPARITION);
+			//$requeteModifierApparition->execute();
+		}
 	}
 ?>

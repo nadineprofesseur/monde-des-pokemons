@@ -41,7 +41,7 @@
 				</select>
 			</div>
 												
-			<input type="submit" name="action-ajouter-apparition" value="Enregistrer"/>
+			<input type="submit" name="action-modifier-apparition" value="Enregistrer"/>
 			
 		</form>
 	</section>
