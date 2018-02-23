@@ -26,7 +26,7 @@
 		
 			<div>
 				<label for="description">Description</label>
-				<textarea></textarea>
+				<textarea name="description" id="description"></textarea>
 			</div>
 			
 			<div>

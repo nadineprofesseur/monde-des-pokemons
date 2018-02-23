@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  mar. 20 fév. 2018 à 11:53
+-- Généré le :  ven. 23 fév. 2018 à 05:33
 -- Version du serveur :  5.7.21
 -- Version de PHP :  7.1.13
 
@@ -33,7 +33,7 @@ CREATE TABLE `apparition` (
   `idPokemon` int(11) NOT NULL,
   `episode` int(11) NOT NULL,
   `description` text NOT NULL,
-  `majeur` tinyint(1) NOT NULL
+  `majeur` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -69,7 +69,8 @@ CREATE TABLE `pokemon` (
 INSERT INTO `pokemon` (`idPokemon`, `nom`, `type`, `generation`, `resume`, `illustration`) VALUES
 (1, 'Tarpaud', 'Eau', 2, 'Ce Pokémon est semblable à une grenouille arboricole, potentiellement inspirée de la rainette verte.', 'tarpaud.png'),
 (2, 'Noacier', 'Plante', 5, 'Noacier est un Pokémon ressemblant à une grosse bogue de marron fermée en acier et de forme ovale. Trois lianes partent du sommet de sa tête.', 'noacier.png'),
-(3, 'Cizayox5', 'Acier', 2, 'Ses deux pinces font penser aux motifs que les papillons possèdent sur leurs ailes pour effrayer les prédateurs.', 'cizayox.png');
+(3, 'Cizayox5', 'Acier', 2, 'Ses deux pinces font penser aux motifs que les papillons possèdent sur leurs ailes pour effrayer les prédateurs.', 'cizayox.png'),
+(4, 'test', 'test', 5, 'test', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -101,7 +102,7 @@ ALTER TABLE `apparition`
 -- AUTO_INCREMENT pour la table `pokemon`
 --
 ALTER TABLE `pokemon`
-  MODIFY `idPokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idPokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
