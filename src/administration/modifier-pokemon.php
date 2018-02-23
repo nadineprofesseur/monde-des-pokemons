@@ -60,13 +60,14 @@
 	<section>
 		<a href="ajouter-apparition.php?pokemon=<?=$pokemon['idPokemon']?>">Ajouter</a>
 		<?php 
-		
 			foreach($listeApparitions as $apparition)
 			{
 				//print_r($apparition);
 			?>
 			<div>
-				Épisode <?=$apparition['episode']?> Modifier Supprimer
+				Épisode <?=$apparition['episode']?> 
+				<a href="modifier-apparition.php?apparition=<?=$apparition['idApparition']?>">Modifier</a> 
+				Supprimer
 			</div>
 			<?php
 			}
