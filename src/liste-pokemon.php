@@ -21,6 +21,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Monde des Pokémons</title>
+	<script type="text/javascript" src="lib/Ajax.js"></script>
+	<script type="text/javascript">
+		function rechercherLesSuggestions()
+		{
+			alert('onkeyup');
+			
+		}
+	</script>
 </head>
 <body>
 	<header>
@@ -36,7 +44,7 @@
 		
 			<form method="post" action="" id="formulaire-recherche">
 			
-				<input type="text" name="recherche" id="recherche" value="<?=$recherche?>"/>
+				<input type="text" name="recherche" id="recherche" value="<?=$recherche?>" onkeyup="rechercherLesSuggestions()"/>
 				<input type="submit" value="Rechercher" name="action-rechercher"/>
 			
 			</form>
