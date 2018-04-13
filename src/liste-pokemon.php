@@ -1,4 +1,14 @@
 <?php 	
+
+	if(!empty($_POST['action-rechercher']))
+	{
+		//print_r($_POST);
+		$terme = $_POST['recherche'];
+		echo $terme;
+		
+		
+	}
+
 	include "accesseur/PokemonDAO.php";
 	$pokemonDao = new PokemonDAO();
 	$listePokemon = $pokemonDao->lireListe();
@@ -19,12 +29,13 @@
 	<section id="contenu">
 	
 	
+
 		<section id="section-recherche">
 		
 			<form method="post" action="" id="formulaire-recherche">
 			
 				<input type="text" name="recherche" id="recherche"/>
-				<input type="submit" value="Rechercher"/>
+				<input type="submit" value="Rechercher" name="action-rechercher"/>
 			
 			</form>
 		
