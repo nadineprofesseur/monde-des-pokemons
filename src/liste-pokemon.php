@@ -4,11 +4,8 @@
 	$pokemonDao = new PokemonDAO();
 	
 	if(!empty($_POST['action-rechercher']))
-	{
-		//print_r($_POST);
-		$recherche = $_POST['recherche'];
-		//echo $recherche;
-		
+	{ 	//print_r($_POST);
+		$recherche = $_POST['recherche']; //echo $recherche;
 		$listePokemon = $pokemonDao->rechercherListe($recherche);
 		
 	}

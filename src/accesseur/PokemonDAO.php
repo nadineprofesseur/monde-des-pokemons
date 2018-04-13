@@ -6,7 +6,9 @@
 		function lireListe()
 		{
 			global $basededonnees;
-			$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
+			
+			$LISTE_POKEMON = "SELECT * FROM pokemon";
+			$requeteListePokemons = $basededonnees->prepare($LISTE_POKEMON);
 			$requeteListePokemons->execute();
 			$listePokemon = $requeteListePokemons->fetchAll();
 			return $listePokemon;
@@ -15,7 +17,9 @@
 		function rechercherListe($terme)
 		{
 			global $basededonnees;
-			$requeteListePokemons = $basededonnees->prepare("SELECT * FROM pokemon");
+			$LISTE_POKEMON = "SELECT * FROM pokemon WHERE nom LIKE '%$terme%' OR resume LIKE '%$terme%' OR type LIKE '%$terme%';";
+			echo $LISTE_POKEMON;
+			$requeteListePokemons = $basededonnees->prepare($LISTE_POKEMON);
 			$requeteListePokemons->execute();
 			$listePokemon = $requeteListePokemons->fetchAll();
 			return $listePokemon;
