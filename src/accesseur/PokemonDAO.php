@@ -18,8 +18,10 @@
 		{
 			global $basededonnees;
 			$LISTE_POKEMON = "SELECT * FROM pokemon WHERE nom LIKE '%$terme%' OR resume LIKE '%$terme%' OR type LIKE '%$terme%';";
+			//$LISTE_POKEMON = "SELECT * FROM pokemon WHERE nom LIKE CONCAT('%', :terme, '%') OR resume LIKE '%$terme%' OR type LIKE '%$terme%';";
 			//echo $LISTE_POKEMON;
 			$requeteListePokemons = $basededonnees->prepare($LISTE_POKEMON);
+			//$requeteLirePokemon->bindParam(":terme", $terme);
 			$requeteListePokemons->execute();
 			$listePokemon = $requeteListePokemons->fetchAll();
 			return $listePokemon;

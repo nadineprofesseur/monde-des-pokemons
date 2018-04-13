@@ -5,7 +5,8 @@
 	
 	if(!empty($_POST['action-rechercher']))
 	{ 	//print_r($_POST);
-		$recherche = $_POST['recherche']; //echo $recherche;
+		$recherche = filter_var($_POST['recherche'],FILTER_SANITIZE_STRING); 
+		//echo $recherche;
 		$listePokemon = $pokemonDao->rechercherListe($recherche);
 		
 	}
