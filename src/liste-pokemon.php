@@ -25,7 +25,11 @@
 	<script type="text/javascript">
 		function rechercherLesSuggestions()
 		{
-			alert('onkeyup');
+			console.log('onkeyup');
+			ajax = new Ajax();
+			//console.log(ajax);
+			url = 'http://localhost/monde-pokemons/src/action/suggestion.php';
+			
 			
 		}
 	</script>
