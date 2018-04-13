@@ -17,6 +17,20 @@
 	</header>
 	
 	<section id="contenu">
+	
+	
+		<section id="section-recherche">
+		
+			<form method="post" action="" id="formulaire-recherche">
+			
+				<label for="recherche"></label>
+				<input type="text" name="recherche" id="recherche"/>
+				<input type="submit" value="Rechercher"/>
+			
+			</form>
+		
+		</section>
+	
 		<header><h2>Liste des pokémons</h2></header>
 	
 	
