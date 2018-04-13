@@ -1,17 +1,21 @@
 <?php 	
 
+	include "accesseur/PokemonDAO.php";
+	$pokemonDao = new PokemonDAO();
+	
 	if(!empty($_POST['action-rechercher']))
 	{
 		//print_r($_POST);
-		$terme = $_POST['recherche'];
-		echo $terme;
+		$recherche = $_POST['recherche'];
+		//echo $recherche;
 		
+		$listePokemon = $pokemonDao->rechercherListe($recherche);
 		
 	}
-
-	include "accesseur/PokemonDAO.php";
-	$pokemonDao = new PokemonDAO();
-	$listePokemon = $pokemonDao->lireListe();
+	else
+	{
+		$listePokemon = $pokemonDao->lireListe();
+	}
 	//exit(0);
 ?>
 <!doctype html>
