@@ -23,7 +23,6 @@
 		
 			<form method="post" action="" id="formulaire-recherche">
 			
-				<label for="recherche"></label>
 				<input type="text" name="recherche" id="recherche"/>
 				<input type="submit" value="Rechercher"/>
 			
