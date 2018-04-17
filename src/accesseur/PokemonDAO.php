@@ -106,7 +106,7 @@
 			// Se connecter a la base de donnees
 			global $basededonnees;
 			// Preparer un SQL en utilisant le parametre recupere dans $_GET // SELECT champ FROM table WHERE champ LIKE '$recherche%'
-			$SQL_RECHERCHER_SUGGESTIONS = "SELECT nom as terme FROM pokemon WHERE nom LIKE '%$recherche%'";
+			$SQL_RECHERCHER_SUGGESTIONS = "SELECT nom as terme FROM pokemon WHERE nom LIKE '%$recherche%' UNION SELECT type as terme FROM pokemon WHERE type LIKE '%$recherche%' UNION SELECT resume as terme FROM pokemon WHERE resume LIKE '%$recherche%'";
 			echo $SQL_RECHERCHER_SUGGESTIONS;
 			// Executer la requete et recuperer tous les resultats avec fetchAll() dans une $listeChoix
 			$requeteRechercherSuggestions = $basededonnees->prepare($SQL_RECHERCHER_SUGGESTIONS);
