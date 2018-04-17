@@ -2,7 +2,6 @@
 	require_once "basededonnees.php";
 	class PokemonDAO
 	{		
-		
 		function lireListe()
 		{
 			global $basededonnees;
@@ -100,6 +99,21 @@
 			$requeteEffacerPokemon = $basededonnees->prepare($SQL_EFFACER_POKEMON);
 			$requeteEffacerPokemon->bindParam(":id_pokemon", $id);
 			$requeteEffacerPokemon->execute();		
+		}
+		
+		function rechercherCorrespondances($recherche)
+		{
+			// Se connecter a la base de donnees
+			global $basededonnees;
+			// Preparer un SQL en utilisant le parametre recupere dans $_GET // SELECT champ FROM table WHERE champ LIKE '$recherche%'
+			$SQL_RECHERCHER_CORRESPONDANCES = "SELECT nom FROM pokemon WHERE nom LIKE '%$recherche%'";
+			echo $SQL_RECHERCHER_CORRESPONDANCES;
+			// Executer la requete et recuperer tous les resultats avec fetchAll() dans une $listeChoix
+			$requeteRechercherCorrespondances = $basededonnees->prepare($SQL_RECHERCHER_CORRESPONDANCES);
+			$requeteRechercherCorrespondances->execute();
+			$correspondances = $requeteRechercherCorrespondances->fetchAll();
+			print_r($correspondances);
+			return $correspondances;
 		}
 	}
 

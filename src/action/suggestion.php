@@ -9,19 +9,15 @@
 	 ** view-source:http://localhost/autocomplete/suggestion.php?recherche=A
 	 **/
 
+	//print_r($_GET);
+	$recherche = $_GET['recherche']; // TODO : filtrer
+	
 	// SECTION PREPARATION DES DONNEES
 	
-	// Se connecter a la base de donnees
-	
-	
-	// Preparer un SQL en utilisant le parametre recupere dans $_GET
-	// SELECT champ FROM table WHERE champ LIKE '$recherche%'
-	
-	
-	// Executer la requete et recuperer tous les resultats avec fetchAll() dans une $listeChoix
-
-	
-	print_r($_GET);
+	include "../accesseur/PokemonDAO.php";
+	$pokemonDAO = new PokemonDAO();
+	$correspondances = $pokemonDAO->rechercherCorrespondances($recherche);
+	print_r($correspondances);
 ?>
 
 <ul id="suggestions">
