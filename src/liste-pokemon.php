@@ -41,16 +41,38 @@
 		}
 		
 		// ETAPE 3 - RECEPTION (traitement)
-		function recevoirLesSuggestions()
+		function recevoirLesSuggestions(ajax)
 		{
-			
-			
+			suggestions = ajax.responseText;
+			console.log('suggestions='+suggestions);
 			
 			// ETAPE 4 - AFFICHAGE (retroaction)
 			
 		}
+		
 	</script>
 </head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
 	<header>
 		<h1>Monde des Pokémons</h1>
@@ -67,7 +89,7 @@
 			
 				<input type="text" name="recherche" id="recherche" value="<?=$recherche?>" onkeyup="rechercherLesSuggestions()"/>
 				<input type="submit" value="Rechercher" name="action-rechercher"/>
-			
+				
 			</form>
 		
 		</section>
