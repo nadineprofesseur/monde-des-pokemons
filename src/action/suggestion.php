@@ -17,7 +17,7 @@
 	include "../accesseur/PokemonDAO.php";
 	$pokemonDAO = new PokemonDAO();
 	$suggestions = $pokemonDAO->rechercherSuggestions($recherche);
-	print_r($suggestions);
+	//print_r($suggestions);
 ?>
 
 <ul id="suggestions">
@@ -26,10 +26,11 @@
 	// SECTION AFFICHAGE
 	
 	// foreach sur les donnees recues et generer un li par item
+	foreach($suggestions as $suggestion)
+	{		
 ?>
-
-	<li><a href="#" onclick="afficherSuggestion('Alerte')">Alerte</a></li>
-	<li><a href="#" onclick="afficherSuggestion('Abeilles')">Abeilles</a></li>
-	<li><a href="#" onclick="afficherSuggestion('Accent')">Accent</a></li>
-	<li><a href="#" onclick="afficherSuggestion('Avanc&eacute;e')">Avanc&eacute;e</a></li>
+	<li><a href="#" onclick="afficherSuggestion('<?=$suggestion['terme']?>')"><?=$suggestion['terme']?></a></li>
+<?php
+}
+?>
 </ul>
