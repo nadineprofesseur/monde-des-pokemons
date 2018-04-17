@@ -49,7 +49,13 @@
 			// ETAPE 4 - AFFICHAGE (retroaction)
 			document.querySelector("#boite-suggestions").style.display = "block";
 			document.querySelector("#boite-suggestions").innerHTML = suggestions;
-			
+		}
+		
+		// ETAPE 5 - SUITE
+		function afficherSuggestion(suggestion)
+		{
+			document.querySelector('#recherche').value=suggestion;
+			document.querySelector("#boite-suggestions").style.display = "none";			
 		}
 		
 	</script>
