@@ -22,7 +22,7 @@
 
 ?>
 
-<ul>
+<ul id="suggestions">
 <?php
 
 	// SECTION AFFICHAGE

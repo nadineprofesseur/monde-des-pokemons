@@ -47,32 +47,26 @@
 			console.log('suggestions='+suggestions);
 			
 			// ETAPE 4 - AFFICHAGE (retroaction)
+			document.querySelector("#boite-suggestions").style.display = "block";
+			document.querySelector("#boite-suggestions").innerHTML = suggestions;
 			
 		}
 		
 	</script>
+	<style>
+	#section-recherche
+	{
+		position:relative;
+	}
+	#boite-suggestions
+	{
+		display:none;
+		border:solid 2px #ceaf37;
+		background-color:#f7e9b4;
+		position:absolute;
+	}
+	</style>
 </head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <body>
 	<header>
 		<h1>Monde des Pokémons</h1>
@@ -81,16 +75,13 @@
 	
 	<section id="contenu">
 	
-	
-
 		<section id="section-recherche">
 		
 			<form method="post" action="" id="formulaire-recherche">
-			
 				<input type="text" name="recherche" id="recherche" value="<?=$recherche?>" onkeyup="rechercherLesSuggestions()"/>
 				<input type="submit" value="Rechercher" name="action-rechercher"/>
-				
 			</form>
+			<div id="boite-suggestions"></div>
 		
 		</section>
 	
