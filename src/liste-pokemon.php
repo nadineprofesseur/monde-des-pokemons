@@ -28,6 +28,8 @@
 		function rechercherLesSuggestions()
 		{
 			console.log('#recherche.onkeyup');
+			recherche = document.querySelector("#recherche").value;
+			console.log('recherche='+recherche);
 			
 			// ETAPE 2 - REQUETE
 			ajax = new Ajax();
