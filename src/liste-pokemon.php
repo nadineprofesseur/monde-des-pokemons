@@ -29,14 +29,14 @@
 		{
 			console.log('#recherche.onkeyup');
 			recherche = document.querySelector("#recherche").value;
-			console.log('recherche='+recherche);
+			parametre = "recherche=" + recherche;
+			console.log(parametre);
 			
 			// ETAPE 2 - REQUETE
 			ajax = new Ajax();
 			//console.log(ajax);
 			url = 'http://localhost/monde-pokemons/src/action/suggestion.php';
-			ajax.executer("GET", url, "", recevoirLesSuggestions);
-			
+			ajax.executer("GET", url, parametre, recevoirLesSuggestions);
 			
 		}
 		

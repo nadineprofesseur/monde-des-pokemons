@@ -20,6 +20,8 @@
 	
 	// Executer la requete et recuperer tous les resultats avec fetchAll() dans une $listeChoix
 
+	
+	print_r($_GET);
 ?>
 
 <ul id="suggestions">
