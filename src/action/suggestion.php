@@ -16,8 +16,8 @@
 	
 	include "../accesseur/PokemonDAO.php";
 	$pokemonDAO = new PokemonDAO();
-	$correspondances = $pokemonDAO->rechercherCorrespondances($recherche);
-	print_r($correspondances);
+	$suggestions = $pokemonDAO->rechercherSuggestions($recherche);
+	print_r($suggestions);
 ?>
 
 <ul id="suggestions">
