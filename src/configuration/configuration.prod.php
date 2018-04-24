@@ -18,4 +18,9 @@
 	$traduction->locale = 'en_CA.utf8'; // $locale = "en_CA";
 	$traduction->locales = ['fr_CA.utf8','en_CA.utf8'];
 	
+	// Préparation de la traduction
+	putenv('LANG='.$traduction->locale);
+	setlocale(LC_MESSAGES,$traduction->locale);
+	bindtextdomain($traduction->domaine,$traduction->chemin);
+	textdomain($traduction->domaine);
 	
