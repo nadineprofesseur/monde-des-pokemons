@@ -1,5 +1,9 @@
 <?php
-
+	$site = new stdClass();
+	$site->racine = new stdClass();
+	$site->racine->disque = $_SERVER['DOCUMENT_ROOT'] . '/monde-pokemons/src/';
+	
+	
 	//echo "POST : ";
 	//print_r($_POST);
 
@@ -12,15 +16,17 @@
 	//print_r($_SERVER);
 	//echo "</pre>";
 	
-	$source = $_FILES["illustration"]["tmp_name"];
-	$destination = $_SERVER["DOCUMENT_ROOT"] . "/monde-pokemons/src/illustration/" . $_FILES["illustration"]["name"];
+	$source = $_FILES['illustration']['tmp_name'];
+	$destination = $site->racine->disque . 'illustration/' . $_FILES['illustration']['name'];
 	
-	echo "<div>Source " . $source . "</div>";
-	echo "<div>Destination " . $destination . "</div>";
-	
+	// 	echo '<div>Source $source </div>'; // ne fonctionne pas
+	// 	echo "<div>Source " . $source . "</div>"; // fonctionne mais plus lent
+	echo "<div>Source $source </div>"; 
+	echo '<div>Destination ' . $destination . '</div>';
+		
 	if(move_uploaded_file($source, $destination))
 	{/*?>
-		<img src="illustration/<?=$_FILES["illustration"]["name"]?>"/>
+		<img src="illustration/<?=$_FILES['illustration']['name']?>"/>
 	<?php	
 	*/
 	}
@@ -30,7 +36,7 @@
 	
 	//////////// CHARGEMENT ////////////
 
-	$cheminImageGrande = $_SERVER["DOCUMENT_ROOT"] . "/monde-pokemons/src/illustration/" . $_FILES["illustration"]["name"]; //echo $cheminImageGrande;
+	$cheminImageGrande = $site->racine->disque . '/illustration/' . $_FILES['illustration']['name']; //echo $cheminImageGrande;
 	$imageSource = imagecreatefromjpeg($cheminImageGrande);
 	$dimensionSource = getimagesize($destination);
 	$largeurSource = $dimensionSource[0];
