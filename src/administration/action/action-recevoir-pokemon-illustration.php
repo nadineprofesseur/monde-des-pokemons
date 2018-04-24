@@ -1,7 +1,8 @@
 <?php
 	$site = new stdClass();
-	$site->racine = new stdClass();
-	$site->racine->disque = $_SERVER['DOCUMENT_ROOT'] . '/monde-pokemons/src/';
+	$site->chemin = new stdClass();
+	$site->chemin->racine = $_SERVER['DOCUMENT_ROOT'] . '/monde-pokemons/src/';
+	$site->chemin->illustration = $site->chemin->racine . 'illustration/';
 	
 	
 	//echo "POST : ";
@@ -17,7 +18,7 @@
 	//echo "</pre>";
 	
 	$source = $_FILES['illustration']['tmp_name'];
-	$destination = $site->racine->disque . 'illustration/' . $_FILES['illustration']['name'];
+	$destination = $site->chemin->illustration . $_FILES['illustration']['name'];
 	
 	// 	echo '<div>Source $source </div>'; // ne fonctionne pas
 	// 	echo "<div>Source " . $source . "</div>"; // fonctionne mais plus lent
@@ -36,7 +37,7 @@
 	
 	//////////// CHARGEMENT ////////////
 
-	$cheminImageGrande = $site->racine->disque . '/illustration/' . $_FILES['illustration']['name']; //echo $cheminImageGrande;
+	$cheminImageGrande = $site->chemin->illustration . $_FILES['illustration']['name']; 
 	$imageSource = imagecreatefromjpeg($cheminImageGrande);
 	$dimensionSource = getimagesize($destination);
 	$largeurSource = $dimensionSource[0];
@@ -60,7 +61,7 @@
 		0,0,										0,0,
 		$largeurMiniature,$hauteurMiniature,		$largeurSource,$hauteurSource);
 	
-	$cheminMiniature = $_SERVER["DOCUMENT_ROOT"] . "/monde-pokemons/src/" . "illustration/mini/".$_FILES["illustration"]["name"];
+	$cheminMiniature = $site->chemin->illustration . "mini/".$_FILES["illustration"]["name"];
 	echo $cheminMiniature;
 	
 	//////////// SAUVEGARDE ////////////
