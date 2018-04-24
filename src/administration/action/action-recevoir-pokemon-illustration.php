@@ -1,31 +1,33 @@
 <?php
 	require_once "../configuration/configuration.php";
+	$champs = 'illustration';
 	
 	//echo "POST : ";
 	//print_r($_POST);
 
-	echo "FILES : ";
-	echo "<pre>";
-	print_r($_FILES);
-	echo "</pre>";
+	//echo "FILES : ";
+	//echo "<pre>";
+	//print_r($_FILES);
+	//echo "</pre>";
 	
 	//echo "<pre>";
 	//print_r($_SERVER);
 	//echo "</pre>";
 	
-	$source = $_FILES['illustration']['tmp_name'];
-	$destination = $site->chemin->illustration . $_FILES['illustration']['name'];
+	$source = $_FILES[$champs]['tmp_name'];
+	$destination = $site->chemin->illustration . $_FILES[$champs]['name'];
 	
 	// 	echo '<div>Source $source </div>'; // ne fonctionne pas
 	// 	echo "<div>Source " . $source . "</div>"; // fonctionne mais plus lent
-	echo "<div>Source $source </div>"; 
-	echo '<div>Destination ' . $destination . '</div>';
+	//echo "<div>Source $source </div>"; 
+	//echo '<div>Destination ' . $destination . '</div>';
 		
 	if(move_uploaded_file($source, $destination))
-	{/*?>
-		<img src="illustration/<?=$_FILES['illustration']['name']?>"/>
+	{?>
+		<!--img src="<?=$site->url->illustration . $_FILES['illustration']['name']?>"/-->
+		<img src="<?=$site->url->miniature . $_FILES['illustration']['name']?>"/>
 	<?php	
-	*/
+	
 	}
 	
 	$largeurMiniature = 300;
@@ -33,7 +35,7 @@
 	
 	//////////// CHARGEMENT ////////////
 
-	$cheminImageGrande = $site->chemin->illustration . $_FILES['illustration']['name']; 
+	$cheminImageGrande = $site->chemin->illustration . $_FILES[$champs]['name']; 
 	$imageSource = imagecreatefromjpeg($cheminImageGrande);
 	$dimensionSource = getimagesize($destination);
 	$largeurSource = $dimensionSource[0];
@@ -57,8 +59,8 @@
 		0,0,										0,0,
 		$largeurMiniature,$hauteurMiniature,		$largeurSource,$hauteurSource);
 	
-	$cheminMiniature = $site->chemin->illustration . "mini/".$_FILES["illustration"]["name"];
-	echo $cheminMiniature;
+	$cheminMiniature = $site->chemin->miniature . $_FILES[$champs]['name'];
+	//echo $cheminMiniature;
 	
 	//////////// SAUVEGARDE ////////////
 	
