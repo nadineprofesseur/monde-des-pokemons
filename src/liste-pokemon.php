@@ -81,7 +81,7 @@
 </head>
 <body>
 	<header>
-		<h1>Monde des Pokémons</h1>
+		<h1><?=_('Monde des Pokémons')?></h1>
 		<nav></nav>
 	</header>
 	

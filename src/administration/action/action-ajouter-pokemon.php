@@ -1,6 +1,8 @@
 <?php
 if(!empty($_POST['action-ajouter-pokemon']))
 {
+	
+	include "action-recevoir-pokemon-illustration.php";
 	//echo "action-ajouter-pokemon";
 	$filtrePokemon = array();
 	$filtrePokemon['nom'] = FILTER_SANITIZE_STRING;

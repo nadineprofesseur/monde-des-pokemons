@@ -12,7 +12,8 @@
 	
 	<section id="contenu">
 		<header><h2>Ajouter un pokemon</h2></header>
-		<form method="post" action="index.php">
+		<form method="post" action="index.php" 
+	enctype="multipart/form-data">
 		
 			<div>
 				<label for="nom">Nom</label>
@@ -32,6 +33,11 @@
 			<div>
 				<label for="resume">Resume</label>
 				<textarea name="resume" id="resume"></textarea>
+			</div>
+
+			<div>
+				<label for="illustration">Illustration</label>
+				<input type="file" name="illustration" id="illustration"/>
 			</div>
 			
 			<input type="submit" name="action-ajouter-pokemon" value="Ajouter"/>
