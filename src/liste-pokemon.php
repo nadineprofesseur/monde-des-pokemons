@@ -36,13 +36,13 @@
 			ajax = new Ajax();
 			//console.log(ajax);
 			url = 'http://localhost/monde-pokemons/src/action/suggestion.php';
-			ajax.executer("GET", url, parametre, recevoirLesSuggestions);
-			
+			ajax.executer("GET", url, parametre, recevoirLesSuggestions);			
 		}
 		
 		// ETAPE 3 - RECEPTION (traitement)
 		function recevoirLesSuggestions(ajax)
 		{
+			console.log('recevoirLesSuggestions()');
 			suggestions = ajax.responseText;
 			console.log('suggestions='+suggestions);
 			
