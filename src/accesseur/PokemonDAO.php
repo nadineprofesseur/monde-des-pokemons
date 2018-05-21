@@ -53,10 +53,10 @@
 			//echo "PokemonDao->ajouterPokemon()";
 			//print_r($_POST);
 	
-			$nom = $pokemon["nom"];
-			$type = $pokemon["type"];
-			$generation = $pokemon["generation"];
-			$resume = $pokemon["resume"];
+			$nom = $pokemon->nom;
+			$type = $pokemon->type;
+			$generation = $pokemon->generation;
+			$resume = $pokemon->resume;
 			
 			$SQL_AJOUTER_POKEMON = "INSERT into pokemon(nom, type, generation, resume) VALUES(:nom,:type,:generation,:resume)";
 			//echo $SQL_AJOUTER_POKEMON;
@@ -73,11 +73,11 @@
 		{
 			global $basededonnees;
 			
-			$nom = $pokemon["nom"];
-			$type = $pokemon["type"];
-			$generation = $pokemon["generation"];
-			$resume = $pokemon["resume"];
-			$id = $pokemon["id"];
+			$nom = $pokemon->nom;
+			$type = $pokemon->type;
+			$generation = $pokemon->generation;
+			$resume = $pokemon->resume;
+			$id = $pokemon->id;
 			
 			$SQL_MODIFIER_POKEMON = "UPDATE pokemon SET nom = :nom, type = :type, generation = :generation, resume = :resume WHERE idPokemon = :id_pokemon";
 			//echo $SQL_MODIFIER_POKEMON;

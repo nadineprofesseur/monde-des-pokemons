@@ -24,7 +24,7 @@
 		{
 			echo "ApparitionDAO.ajouterApparition()";
 			//print_r($apparition);
-			$AJOUTER_APPARITION = "INSERT INTO apparition(idPokemon, episode, description, majeur) VALUES('".$apparition['idPokemon']."','".$apparition['episode']."','".$apparition['description']."','".$apparition['majeur']."')";
+			$AJOUTER_APPARITION = "INSERT INTO apparition(idPokemon, episode, description, majeur) VALUES('".$apparition->idPokemon."','".$apparition->episode."','".$apparition->description."','".$apparition->majeur."')";
 			//echo $AJOUTER_APPARITION;
 			global $basededonnees;
 			$requeteAjouterApparition = $basededonnees->prepare($AJOUTER_APPARITION);
@@ -35,7 +35,7 @@
 		{
 			//echo "ApparitionDAO.modifierApparition()";
 			//print_r($apparition);
-			$MODIFIER_APPARITION = "UPDATE apparition SET episode = '".$apparition['episode']."', description = '".$apparition['description']."', majeur = '".$apparition['majeur']."' WHERE idApparition = '".$apparition['idApparition']."'";
+			$MODIFIER_APPARITION = "UPDATE apparition SET episode = '".$apparition->episode."', description = '".$apparition->description."', majeur = '".$apparition->majeur."' WHERE idApparition = '".$apparition->idApparition."'";
 			//echo $MODIFIER_APPARITION;
 			global $basededonnees;
 			$requeteModifierApparition = $basededonnees->prepare($MODIFIER_APPARITION);
