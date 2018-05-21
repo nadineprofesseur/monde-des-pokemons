@@ -20,11 +20,11 @@
 	</header>
 	
 	<section id="contenu">
-		<header><h2>Apparition de l'épisode <?=$apparition['episode']?></h2></header>
+		<header><h2>Apparition de l'épisode <?=$apparition->episode?></h2></header>
 
-		<p><?=$apparition['description']?></p>
+		<p><?=$apparition->description?></p>
 		
-		<nav><a href="pokemon.php?pokemon=<?=$apparition['idPokemon']?>">Revenir à la liste des apparitions</a></nav>
+		<nav><a href="pokemon.php?pokemon=<?=$apparition->idPokemon?>">Revenir à la liste des apparitions</a></nav>
 	</section>
 	
 	

@@ -8,7 +8,7 @@
 			global $basededonnees;
 			$requeteListerApparitions = $basededonnees->prepare($LISTER_APPARITIONS);
 			$requeteListerApparitions->execute();
-			return $requeteListerApparitions->fetchAll();
+			return $requeteListerApparitions->fetchAll(PDO::FETCH_OBJ);
 		}
 		
 		function lireApparition($idApparition)
@@ -17,7 +17,7 @@
 			global $basededonnees;
 			$requeteLireApparition = $basededonnees->prepare($LIRE_APPARITION);
 			$requeteLireApparition->execute();
-			return $requeteLireApparition->fetch();
+			return $requeteLireApparition->fetch(PDO::FETCH_OBJ);
 		}
 		
 		function ajouterApparition($apparition)

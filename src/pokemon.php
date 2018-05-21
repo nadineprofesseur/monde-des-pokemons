@@ -23,17 +23,17 @@
 	</header>
 	
 	<section id="contenu">
-		<header><h2>Pokémon : <?=$pokemon['nom']?></h2></header>
+		<header><h2>Pokémon : <?=$pokemon->nom?></h2></header>
 
 		<section>
 			<div>
-				Type : <?=$pokemon['type']?>
+				Type : <?=$pokemon->type?>
 			</div>
 			<div>
-				Génération : <?=$pokemon['generation']?>
+				Génération : <?=$pokemon->generation?>
 			</div>
 			
-			<p><?=$pokemon['resume']?></p>				
+			<p><?=$pokemon->resume?></p>				
 		</section>
 		
 		<section>
@@ -44,8 +44,8 @@
 				{
 				?>
 				<div>
-					<h4><a href="apparition.php?apparition=<?=$apparition['idApparition']?>">Episode : <?=$apparition['episode']?></a></h4>
-					<p><?=$apparition['description']?></p>
+					<h4><a href="apparition.php?apparition=<?=$apparition->idApparition?>">Episode : <?=$apparition->episode?></a></h4>
+					<p><?=$apparition->description?></p>
 				</div>
 				<?php
 				}

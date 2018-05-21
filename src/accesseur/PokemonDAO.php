@@ -9,7 +9,7 @@
 			$LISTE_POKEMON = "SELECT * FROM pokemon";
 			$requeteListePokemons = $basededonnees->prepare($LISTE_POKEMON);
 			$requeteListePokemons->execute();
-			$listePokemon = $requeteListePokemons->fetchAll();
+			$listePokemon = $requeteListePokemons->fetchAll(PDO::FETCH_OBJ);
 			return $listePokemon;
 		}
 		
@@ -22,7 +22,7 @@
 			$requeteListePokemons = $basededonnees->prepare($LISTE_POKEMON);
 			//$requeteLirePokemon->bindParam(":terme", $terme);
 			$requeteListePokemons->execute();
-			$listePokemon = $requeteListePokemons->fetchAll();
+			$listePokemon = $requeteListePokemons->fetchAll(PDO::FETCH_OBJ);
 			return $listePokemon;
 		}
 		
@@ -39,7 +39,7 @@
 			$requeteLirePokemon = $basededonnees->prepare($LIRE_POKEMON);
 			$requeteLirePokemon->bindParam(":id_pokemon", $id);
 			$requeteLirePokemon->execute();
-			$pokemon = $requeteLirePokemon->fetch();
+			$pokemon = $requeteLirePokemon->fetch(PDO::FETCH_OBJ);
 			
 			//print_r($pokemon);
 			//var_dump($pokemon);	
@@ -112,7 +112,7 @@
 			$requeteRechercherSuggestions = $basededonnees->prepare($SQL_RECHERCHER_SUGGESTIONS);
 			$requeteRechercherSuggestions->bindParam(':recherche', $recherche, PDO::PARAM_STR);
 			$requeteRechercherSuggestions->execute();
-			$suggestions = $requeteRechercherSuggestions->fetchAll();
+			$suggestions = $requeteRechercherSuggestions->fetchAll(PDO::FETCH_OBJ);
 			//print_r($suggestions);
 			return $suggestions;
 		}

@@ -23,9 +23,9 @@
 		<header><h2>Effacer une apparition de pokemon</h2></header>
 		<form method="post" action="action/action-effacer-apparition.php">
 			
-			<input type="hidden" name="id" value="<?=$apparition['idApparition']?>"/>
+			<input type="hidden" name="id" value="<?=$apparition->idApparition?>"/>
 
-			Voulez-vous vraiment effacer l'apparition de l'episode <?=$apparition['episode']?> ?
+			Voulez-vous vraiment effacer l'apparition de l'episode <?=$apparition->episode?> ?
 
 			<input type="submit" name="confirmation-oui" value="Oui"/>
 			<input type="submit" name="confirmation-non" value="Non"/>

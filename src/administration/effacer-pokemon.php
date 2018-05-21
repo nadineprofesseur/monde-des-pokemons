@@ -22,9 +22,9 @@
 		<header><h2>Effacer un pokemon</h2></header>
 		<form method="post" action="index.php">
 			
-			<input type="hidden" name="id" value="<?=$pokemon['idPokemon']?>"/>
+			<input type="hidden" name="id" value="<?=$pokemon->idPokemon?>"/>
 
-			Voulez-vous vraiment effacer <?=$pokemon['nom']?> ?
+			Voulez-vous vraiment effacer <?=$pokemon->nom?> ?
 
 			<input type="submit" name="confirmation-oui" value="Oui"/>
 			<input type="submit" name="confirmation-non" value="Non"/>

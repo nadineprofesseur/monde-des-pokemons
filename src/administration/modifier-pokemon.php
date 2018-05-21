@@ -26,28 +26,28 @@
 	
 	<section id="contenu">
 		<header><h2>Modifier un pokemon</h2></header>
-		<form method="post" action="modifier-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
+		<form method="post" action="modifier-pokemon.php?pokemon=<?=$pokemon->idPokemon?>">
 			
-			<input type="hidden" name="id" value="<?=$pokemon['idPokemon']?>"/>
+			<input type="hidden" name="id" value="<?=$pokemon->idPokemon?>"/>
 
 			<div>
 				<label for="nom">Nom</label>
-				<input type="text" name="nom" id="nom" value="<?=$pokemon['nom']?>"/>
+				<input type="text" name="nom" id="nom" value="<?=$pokemon->nom?>"/>
 			</div>
 		
 			<div>
 				<label for="type">Type</label>
-				<input type="text" name="type" id="type" value="<?=$pokemon['type']?>"/>
+				<input type="text" name="type" id="type" value="<?=$pokemon->type?>"/>
 			</div>
 			
 			<div>
 				<label for="generation">Generation</label>
-				<input type="number" name="generation" id="generation" value="<?=$pokemon['generation']?>"/>
+				<input type="number" name="generation" id="generation" value="<?=$pokemon->generation?>"/>
 			</div>
 			
 			<div>
 				<label for="resume">Resume</label>
-				<textarea name="resume" id="resume"><?=$pokemon['resume']?></textarea>
+				<textarea name="resume" id="resume"><?=$pokemon->resume?></textarea>
 			</div>
 						
 			<input type="submit" name="action-modifier-pokemon" value="Enregistrer"/>
@@ -58,16 +58,16 @@
 	</section>
 	
 	<section>
-		<a href="ajouter-apparition.php?pokemon=<?=$pokemon['idPokemon']?>">Ajouter</a>
+		<a href="ajouter-apparition.php?pokemon=<?=$pokemon->idPokemon?>">Ajouter</a>
 		<?php 
 			foreach($listeApparitions as $apparition)
 			{
 				//print_r($apparition);
 			?>
 			<div>
-				Épisode <?=$apparition['episode']?> 
-				<a href="modifier-apparition.php?apparition=<?=$apparition['idApparition']?>">Modifier</a> 
-				<a href="effacer-apparition.php?apparition=<?=$apparition['idApparition']?>">Effacer</a>
+				Épisode <?=$apparition->episode?> 
+				<a href="modifier-apparition.php?apparition=<?=$apparition->idApparition?>">Modifier</a> 
+				<a href="effacer-apparition.php?apparition=<?=$apparition->idApparition?>">Effacer</a>
 			</div>
 			<?php
 			}

@@ -25,12 +25,12 @@
 		
 			<div>
 				<label for="episode">Épisode</label>
-				<input type="text" name="episode" id="episode" value="<?=$apparition['episode']?>"/>
+				<input type="text" name="episode" id="episode" value="<?=$apparition->episode?>"/>
 			</div>
 		
 			<div>
 				<label for="description">Description</label>
-				<textarea name="description" id="description"><?=$apparition['description']?></textarea>
+				<textarea name="description" id="description"><?=$apparition->description?></textarea>
 			</div>
 			
 			<div>

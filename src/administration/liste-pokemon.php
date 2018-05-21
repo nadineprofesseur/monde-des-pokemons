@@ -31,12 +31,12 @@
 		?>
 		<div>
 			<div>
-				<?=$pokemon['nom']?>
+				<?=$pokemon->nom?>
 				
-				<a href="modifier-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
+				<a href="modifier-pokemon.php?pokemon=<?=$pokemon->idPokemon?>">
 				Modifier
 				</a>
-				<a href="effacer-pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
+				<a href="effacer-pokemon.php?pokemon=<?=$pokemon->idPokemon?>">
 				Effacer
 				</a>
 

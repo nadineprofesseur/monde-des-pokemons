@@ -106,8 +106,8 @@
 		?>
 		<div>
 			<div>
-				<a href="pokemon.php?pokemon=<?=$pokemon['idPokemon']?>">
-					<?=$pokemon['nom']?>
+				<a href="pokemon.php?pokemon=<?=$pokemon->idPokemon?>">
+					<?=$pokemon->nom?>
 				</a>
 			</div>
 		</div>
