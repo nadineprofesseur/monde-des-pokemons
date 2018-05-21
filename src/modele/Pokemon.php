@@ -1,11 +1,11 @@
 <?php 
 	class Pokemon
 	{	
-		public $nom;
-		public $type;
-		public $generation;
-		public $resume;
-		public $illustration;
+		protected $nom;
+		protected $type;
+		protected $generation;
+		protected $resume;
+		protected $illustration;
 		
 		public static $filtre = array(
 			'nom'=>FILTER_SANITIZE_STRING,
@@ -15,8 +15,8 @@
 	
 		function __construct($valeurs)
 		{
-			$valeurs = filter_var_array($valeurs, Pokemon::$filtre); 
-
+			$valeurs = $this->valeurs = filter_var_array($valeurs, Pokemon::$filtre); 
+			
 			$this->nom = $valeurs['nom'];
 			$this->type = $valeurs['type'];
 			$this->generation = $valeurs['generation'];
@@ -30,6 +30,17 @@
 			$this->filtre['resume'] = FILTER_SANITIZE_STRING;
 			*/
 		}
+		
+		public function __get($name)
+		{
+			if (array_key_exists($name, $this->valeurs)) 
+			{
+				return $this->valeurs[$name];
+			}		
+		}
 	}
 	
+	// test
+	// $pokemon = new Pokemon(array('nom'=>'nadine'));
+	// echo $pokemon->nom;
 ?>
