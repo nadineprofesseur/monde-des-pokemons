@@ -1,5 +1,6 @@
 <?php 
 	require_once "basededonnees.php";
+	require_once "../modele/Pokemon.php";
 	class PokemonDAO
 	{		
 		function lireListe()
@@ -39,7 +40,8 @@
 			$requeteLirePokemon = $basededonnees->prepare($LIRE_POKEMON);
 			$requeteLirePokemon->bindParam(":id_pokemon", $id);
 			$requeteLirePokemon->execute();
-			$pokemon = $requeteLirePokemon->fetch(PDO::FETCH_OBJ);
+			$pokemon = $requeteLirePokemon->fetch(PDO::FETCH_ASSOC);
+			$pokemon = new Pokemon($pokemon);
 			
 			//print_r($pokemon);
 			//var_dump($pokemon);	
